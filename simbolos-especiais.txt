@@ -1,0 +1,54 @@
+
+<h1>Simbolos especiais</h1>
+<p>
+    &lt;<br/>
+	&gt;<br/>
+	&le;<br/>
+	&ge;<br/>
+	&pound;<br/>
+	&yen;<br/>
+	&euro;<br/>
+	&dollar;<br/>
+	&copy;<br/>
+	&reg;<br/>
+	&trade;<br/>
+	&permil;
+	&sum;
+	&infin;
+	&times;
+	&plusmn;
+	&oplus;
+	&radic;
+	&ne;<br/>
+	&delta;
+	&Delta;
+	&Lambda;
+	&Omega;
+	&phi;<br/>
+	&larr;
+	&rarr;
+	&uarr;
+	&darr;
+	&harr; <br/>
+	
+	&spades;
+	&clubs;
+	&hearts;
+	&diams;
+	
+	<p>Exemplos de <sup>formatacao</sup></p>
+<p> X<sup>2</sup></p>
+<p> X<sub>1</sub> = 5</p>
+<p> X<sub>2</sub> =-5</p>
+
+        <pre>
+<code>
+#include &lt;iostream&gt;
+int main(){
+   count <<"Ola, mundo!";
+   return 0;
+}
+</code>
+</pre>
+
+</p>
